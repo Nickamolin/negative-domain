@@ -49,7 +49,7 @@ export const ParallaxScroll = ({
 
   return (
     <div
-      className={cn("h-[40rem] items-start overflow-y-auto w-full", className)}
+      className={cn("h-[40rem] items-start overflow-y-auto w-full no-scrollbar", className)}
       ref={gridRef}
     >
       <ParallaxProvider>
@@ -59,13 +59,19 @@ export const ParallaxScroll = ({
         />
       </ParallaxProvider>
       <div
-        className="grid grid-cols-1 lg:grid-cols-3 items-start  max-w-5xl mx-auto gap-10 py-40 px-10"
+        className="grid grid-cols-1 lg:grid-cols-3 items-start mx-auto gap-10 py-40 px-10"
         ref={gridRef}
       >
         <div className="grid gap-10 lg:hidden">
           {images.map((el, idx) => (
-            <motion.div style={{ y: translateFirst }} key={"grid-2" + idx}>
-              <img src={el} className="rounded-lg"></img>
+            <motion.div style={{ y: translateFirst }} key={"grid-mobile-" + idx}>
+              <Image
+                src={el}
+                className="rounded-lg w-full h-auto"
+                width={500}
+                height={500}
+                alt={`Negative Domain Gallery Image ${idx}`}
+              />
             </motion.div>
           ))}
         </div>
@@ -73,30 +79,41 @@ export const ParallaxScroll = ({
           {firstPart.map((el, idx) => (
             <motion.div
               style={{ y: translateFirst }} // Apply the translateY motion value here
-              key={"grid-1" + idx}
+              key={"grid-1-" + idx}
             >
-              {/* <Image
+              <Image
                 src={el}
-                className="h-80 w-full object-cover object-center rounded-lg gap-10 !m-0 !p-0"
-                height="400"
-                width="400"
-                alt="thumbnail"
-              /> */}
-              <img src={el} className="rounded-lg"></img>
+                className="rounded-lg w-full h-auto"
+                width={500}
+                height={500}
+                alt={`Negative Domain Gallery Image First Column ${idx}`}
+              />
             </motion.div>
           ))}
         </div>
         <div className="hidden lg:grid gap-10">
           {secondPart.map((el, idx) => (
-            <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
-              <img src={el} className="rounded-lg"></img>
+            <motion.div style={{ y: translateSecond }} key={"grid-2-" + idx}>
+              <Image
+                src={el}
+                className="rounded-lg w-full h-auto"
+                width={500}
+                height={500}
+                alt={`Negative Domain Gallery Image Second Column ${idx}`}
+              />
             </motion.div>
           ))}
         </div>
         <div className="hidden lg:grid gap-10">
           {thirdPart.map((el, idx) => (
-            <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
-              <img src={el} className="rounded-lg"></img>
+            <motion.div style={{ y: translateThird }} key={"grid-3-" + idx}>
+              <Image
+                src={el}
+                className="rounded-lg w-full h-auto"
+                width={500}
+                height={500}
+                alt={`Negative Domain Gallery Image Third Column ${idx}`}
+              />
             </motion.div>
           ))}
         </div>
