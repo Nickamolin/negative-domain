@@ -2,7 +2,7 @@
 
 View the art gallery <a href="https://negativedomain.com/">here</a>.
 
-<img src="https://github.com/Nickamolin/NegativeDomain/blob/main/negative-domain/public/branding/banner.jpg" width="1024">
+<img src="https://github.com/Nickamolin/negative-domain/blob/main/public/branding/banner.jpg" width="1024">
 
 <h3>Summary</h3>
 An immersive digital art gallery showcasing a curated collection of original artwork with dynamic parallax scrolling effects.
